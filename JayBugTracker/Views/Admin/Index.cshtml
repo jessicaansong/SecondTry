@@ -1,0 +1,42 @@
+﻿@using Microsoft.AspNet.Identity;
+@using System.Collections.Generic;
+@using JayBugTracker.Models;
+
+
+
+@model IEnumerable<JayBugTracker.Models.ApplicationUser>
+
+
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>@ViewBag.Title.</h2>
+
+
+
+    @foreach (var item in Model)
+    {
+        <table>
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => item.UserName)
+                </td>
+                <td>
+                    @Html.ActionLink("Add To Role", "AddRemoveUsers", new { id = item.Id })
+                </td>
+            </tr>
+        </table>
+    }
+        
+         
+
+
+
+
+
+
+
+

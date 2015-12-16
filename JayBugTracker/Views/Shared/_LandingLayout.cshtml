@@ -1,0 +1,220 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<!--
+#######################################
+    - THE HEAD PART -
+######################################
+-->
+<head>
+    <meta charset="utf-8">
+    <title>LadyBug</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Bootstrap core CSS -->
+    <link href="/Content/bootstrap.css" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link href="/Content/font-awesome.css" rel="stylesheet" />
+
+    <!-- ionicons -->
+    <link href="../css/ionicons.min.css" rel="stylesheet">
+
+    <!-- Owl -->
+
+    <link href="Content/ionicons.css" rel="stylesheet" />
+    <link href="/Content/owl.theme.default.min.css" rel="stylesheet" />
+    <!-- Revolution Slider -->
+    <link href="/TemplateLanding/landing/css/style.css" rel="stylesheet" />
+    <link href="/TemplateLanding/landing/rs-plugin/css/settings-ie8.css" rel="stylesheet" />
+    <link href="/TemplateLanding/landing/css/extralayers.css" rel="stylesheet" />
+    <!-- Simplify -->
+    <link href="/Content/simplify.css" rel="stylesheet" />
+</head>
+<!--
+#######################################
+    - THE BODY PART -
+######################################
+-->
+<body>
+    <div class="wrapper front-end-wrapper">
+    <header class="navbar front-end-navbar" data-spy="affix" data-offset-top="1">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="../index.html" class="navbar-brand"><strong><span class="text-success">LADY</span>BUG</strong></a>
+            </div>
+            <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+                <ul class="nav navbar-nav">
+                    <li>
+                    @Html.ActionLink("About", "About", "Home")
+                    </li>
+                    @*<li>
+                        <a href="#featureSection">Features</a>
+                    </li>*@
+                    @*<li class="active">
+                        <a href="#pricingSection">Pricing</a>
+                    </li>*@
+                    @*<li>
+                        <a href="#blogSection">Blog</a>
+                    </li>*@
+                    @*<li>
+                        <a href="#subscribeSection">Contact</a>
+                    </li>*@
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+
+                    @Html.Partial("_LoginPartial")
+
+
+                    @*<li class="btn-link"><a href="../signin.html" class="btn btn-sm btn-success">Login</a></li>
+                    <li class="btn-link"><a href="../signup.html" class="btn btn-sm btn-purple">Register</a></li>*@
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    @RenderBody()
+
+    <!-- Jquery -->
+    <script src="/Scripts/Template/jquery-ui.custom.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="/Scripts/bootstrap.js"></script>
+    <!-- Modernizr -->
+    <script src="/Scripts/modernizr.min.js"></script>
+    <!-- Owl -->
+    <script src="/Scripts/Template/owl.carousel.min.js"></script>
+    <!-- Waypoint -->
+    <script src="/Scripts/Template/uncompressed/waypoints.js"></script>
+    <!-- ScrollTo -->
+    <script src="/Scripts/Template/uncompressed/jquery.scrollTo.js"></script>
+    <!-- Local Scroll -->
+    <script src="/Scripts/Template/jquery.localScroll.min.js"></script>
+    <!-- Revolution Slider -->
+    <script src="/TemplateLanding/landing/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+    <script src="/TemplateLanding/landing/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
+    <script type="text/javascript">
+
+		jQuery(document).ready(function() {
+			//Slider Revolution
+			jQuery('.tp-banner').show().revolution(
+			{
+				dottedOverlay:"none",
+				delay:16000,
+				startwidth:1170,
+				startheight:700,
+				hideThumbs:200,
+
+				thumbWidth:100,
+				thumbHeight:50,
+				thumbAmount:5,
+
+				navigationType:"bullet",
+				navigationArrows:"solo",
+				navigationStyle:"preview4",
+
+				touchenabled:"on",
+				onHoverStop:"on",
+
+				swipe_velocity: 0.7,
+				swipe_min_touches: 1,
+				swipe_max_touches: 1,
+				drag_block_vertical: false,
+
+										parallax:"mouse",
+				parallaxBgFreeze:"on",
+				parallaxLevels:[7,4,3,2,5,4,3,2,1,0],
+
+				keyboardNavigation:"off",
+
+				navigationStyle: "preview2",
+				navigationHAlign:"center",
+				navigationVAlign:"middle",
+				navigationHOffset:0,
+				navigationVOffset:20,
+
+				soloArrowLeftHalign:"left",
+				soloArrowLeftValign:"center",
+				soloArrowLeftHOffset:20,
+				soloArrowLeftVOffset:0,
+
+				soloArrowRightHalign:"right",
+				soloArrowRightValign:"center",
+				soloArrowRightHOffset:20,
+				soloArrowRightVOffset:0,
+
+				shadow:0,
+				fullWidth:"on",
+				fullScreen:"off",
+
+				spinner:"spinner4",
+
+				stopLoop:"off",
+				stopAfterLoops:-1,
+				stopAtSlide:-1,
+
+				shuffle:"off",
+
+				autoHeight:"off",
+				forceFullWidth:"off",
+
+				hideThumbsOnMobile:"off",
+				hideNavDelayOnMobile:1500,
+				hideBulletsOnMobile:"off",
+				hideArrowsOnMobile:"off",
+				hideThumbsUnderResolution:0,
+
+				hideSliderAtLimit:0,
+				hideCaptionAtLimit:0,
+				hideAllCaptionAtLilmit:0,
+				startWithSlide:0,
+				fullScreenOffsetContainer: ".header"
+			});
+			//End Slider Revolution
+
+			//Section Animation
+			if (Modernizr.mq('(min-width: 1349px)')) {
+				$('.animation-element').waypoint(function() {
+						$(this).removeClass('disabled');
+				}, { offset: 700 });
+			}
+			else if (Modernizr.mq('(min-width: 992px)') && Modernizr.mq('(max-width: 1349px)')) {
+				$('.animation-element').waypoint(function() {
+						$(this).removeClass('disabled');
+				}, { offset: 550 });
+			}
+			else	{
+				$('.animation-element').removeClass('disabled');
+			}
+
+			//Testimonial carousel
+			$('.owl-carousel').owlCarousel({
+			    loop:true,
+			    margin:10,
+			    nav:false,
+			    items:1,
+			    autoplay:true,
+			    autoplayTimeout:2500,
+			    autoplayHoverPause:true,
+			    smartSpeed:500
+			});
+
+			//Scrollto section
+	        $('.front-end-wrapper .navbar-collapse .navbar-nav').localScroll({
+	          duration:800,
+	          offset: -100
+	        });
+		});
+
+    </script>
+
+</body>
+</html>
